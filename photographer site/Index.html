@@ -1,0 +1,148 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content=""/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Abel Fotografia</title>
+		<link a href="Css/Style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="Imgs/logo.png" type="image/x-icon" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			var currentImage = 1;
+
+			//IR PARA A PARTE DO SITE
+			function openPage(page) {
+				if(page == 'Trabalhos') {
+					var distance = $('#recent-works').offset().top;
+				} else if(page == 'Home') {
+					var distance = 0;
+				} else if(page == 'Orçamento') {
+					var distance = '';
+				} else if(page == 'Sobre mim') {
+					var distance = $('#profile-table').offset().top;
+				} else if(page == 'Contato') {
+					var distance = $('body').outerHeight(true) + 200;
+				}
+
+
+
+				$('html, body').animate({
+					scrollTop: distance - ($('body').outerHeight(true) / 2) + 200
+				}, 'slow');
+			}
+
+
+			$(document).ready(function() {
+				//SLIDES
+				setInterval(function() {
+ 					currentImage++;
+
+					if(currentImage == 1) {
+						var old = 4;
+					} else {
+						var old = currentImage;
+					}
+ 					$('#slide-image-'+currentImage).css('z-index', '999');
+ 					$('#slide-image-'+currentImage).css('left', '100%');
+ 					$('#slide-image-'+currentImage).animate({
+ 						left: 0
+ 					}, {
+ 						complete: function() {
+							var oldHtml = $('#slide-image-'+(old-1)).html();
+							$('#slide-image-'+(old-1)).remove();
+							$('#content-slide').append('<div id="slide-image-'+(old-1)+'" class="slide-image">'+oldHtml+'</div>')
+ 						}
+ 					}, 1750, 'slow');
+					if(currentImage == 3) {
+						currentImage = 0;
+					}
+				}, 5000);
+
+
+
+				//EFEITO DO MENU
+				$(document).scroll(function() {
+					if($(document).scrollTop() >= 150) {
+						$('#header').attr('class', 'scrolled');
+					} else {
+						$('#header').removeAttr('class');
+					}
+				});
+			});
+
+
+		</script>
+	</head>
+
+
+
+	<body>
+		<!--TOPO-->
+		<div id="header">
+			<img id="logo-img" src="Imgs/logo.png" alt="logo do site"/>
+			<table>
+				
+					<tr>
+						<td onclick="openPage('Home');">Home</td>
+						<td><a href="Pgs/Jobs.html" target="_self">Trabalhos</a></td>
+						<td><a href="Pgs/Contact.html" target="_self">Orçamento</a></td>
+						<td onclick="openPage('Sobre mim');">Sobre mim</td>
+						<td><a href="Pgs/Contact.html" target="_self">Contato</a></td>
+					</tr>
+				
+			</table>
+		</div>
+
+
+
+
+		<div id="content">
+			<div id="content-slide">
+				<div id="slide-image-1" class="slide-image" style="z-index: 999;"></div>
+				<div id="slide-image-2" class="slide-image" style=""></div>
+				<div id="slide-image-3" class="slide-image" style=""></div>
+			</div>
+			<br/>
+			<table id="profile-table">
+				
+					<tr>
+						<td><img src="Imgs/profile-pic.jpg" alt="imagem do perfil"></td>
+						<td><span id="profile-title">Abel Fotografia</span><br/><span id="profile-description">E enquanto uma chora, outra ri; é a lei do mundo, meu rico senhor; é a perfeição universal. Tudo chorando seria monótono, tudo rindo cansativo; mas uma boa distribuição de lágrimas e polcas, soluços e sarabandas, acaba por trazer à alma do mundo a variedade necessária, e faz-se o equilíbrio da vida.</span><br/><img src="Imgs/social-facebook.png"><a href="https://www.instagram.com/abelftg/"><img src="Imgs/social-instagram.png"></a> <a href="https://api.whatsapp.com/send?l=pt_BR&phone=5562994556828"><img src="Imgs/social-wpp.png"></a></td>
+					</tr>
+				
+			</table>
+			<br/>
+
+
+			<div id="recent-works">
+				<span id="recent-works-title">Trabalhos Recentes</span>
+				<br/>
+				<table>
+					
+						<tr>
+							<td><a href="Pgs/Jobs.html" target="_self"><img src="Imgs/image-job1.jpg" alt="cliente 1"></a></td>
+							<td><a href="Pgs/Jobs.html" target="_self"><img src="Imgs/image-job2.jpg" alt="cliente 2"></a></td>
+							<td><a href="Pgs/Jobs.html" target="_self"><img src="Imgs/image-job3.jpg" alt="cliente 3"></a></td>
+						</tr>
+						<tr>
+							<td>Aline Soeiro</td>
+							<td>Fernanda Oliveira</td>
+							<td>Gabriel Lucena</td>
+						</tr>
+					
+				</table>
+			</div>
+
+
+			<div id="footer">
+				<span id="contact-info">italoabelsousa@hotmail.com (62) 99455-6828</span>
+				<span id="copyright">Italo Abel </span>
+			</div>
+			
+		</div>
+	</body>
+</html>
