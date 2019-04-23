@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="#"/>
+		<meta name="Keywords" content="#"/>
+		<meta name="Description" content="#"/>
+		<link href="Css/style.css" rel="stylesheet"/>
+		<title>Login</title>
+	</head>
+	<body>
+		<!--PAGINA DE LOGIN-->
+		<div id="loginpage">
+			<div id="access">
+				<form action="php/login.php" method="post" name="login" id="login">
+					<legend>Login</legend>
+					<input type="text" name="usuario" id="email" placeholder="Usuario" required/>
+					<input type="password" name="senha" id="password" placeholder="Senha" required />
+					<input type="submit" name="send" id="send" value="Login"/>
+					<p class="align"><a href="#">Esqueceu a senha? Clique aqui</a></p>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

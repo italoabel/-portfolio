@@ -1,0 +1,527 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* fontes */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+@font-face {
+	font-family: Bahns;
+	src: url("../fonts/Bahnschrift-Semibold-Condensed.ttf");
+}
+@font-face {
+	font-family: adobeclean-regular;
+	src: url('../fonts/adobeclean-regular.ttf');
+}
+@font-face {
+	font-family: bebasneue-regular;
+	src: url('../fonts/bebasneue-regular.ttf');
+}
+@font-face {
+	font-family: roboto-regular;
+	src: url('../fonts/roboto-regular.ttf');
+}
+@font-face {
+	font-family: roboto-bold;
+	src: url('../fonts/roboto-bold.ttf');
+}
+@font-face {
+	font-family: roboto-black;
+	src: url('../fonts/roboto-black.ttf');
+}
+@font-face {
+	font-family: robotocondensed-regular;
+	src: url('../fonts/robotocondensed-regular.ttf');
+}
+@font-face {
+	font-family: robotocondensed-bold;
+	src: url('../fonts/robotocondensed-bold.ttf');
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body, html {
+	width: 100%;
+}
+
+*::selection {
+	background: #444;
+	color: #eee;
+}
+*:focus {
+	outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/*PAGE INDEX*/
+
+#loginpage {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-image: url(../Imgs/background1.jpg);
+	background-repeat: no-repeat;
+	overflow: auto;
+	text-align: center;
+	background-position: center;
+	background-size: cover;
+}
+#access {
+	position: fixed;
+	height: 175px;
+	width: 300px;
+	top: 150px;
+	left: calc(50% - 150px);
+	background: transparent;
+	border-radius: 8px 0px;
+	padding: 5px 10px;
+}
+legend {
+	font-size: 15px;
+	font-weight: bolder;
+	color: #000000;
+	text-align: center; 
+	font-family: Bahns;
+}
+#email, #password {
+	display: block;
+	margin: 0 auto;
+	border: none;
+	border-bottom: 1px solid #999;
+	background-color: transparent;
+	padding: 5px 10px;
+	width: 256px;
+	color: #555;
+	font-size: 10px;
+	font-family: Roboto;
+}
+#password {
+	margin: 15px auto;
+}
+#access input[type="submit"] {
+	border: none;
+	border-bottom: 1px solid #000000;
+	background-color: transparent;
+	padding: 10px;
+	width: 100%;
+	color: black;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+#access a {
+	font-size: 10px;
+	align: center;
+	color: black;
+	font-style: italic;
+	text-decoration: none;
+	font-family: Bahns;
+}
+.align {
+	text-align: center;
+}
+
+/*PAGE HOME*/
+
+#menu {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	background: black;
+	transition: 0.65s;
+	z-index: 1;
+	font-family: robotocondensed-regular;
+}
+#menu table {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	border-spacing: 0px;
+}
+#menu table tr td {
+	transition: 0.45s;
+	text-align: center;
+	width: 20%;
+	font: 15px robotocondensed-regular;
+	color: white;
+}
+#menu table tr td a {
+	transition: 0.45s;
+	text-align: center;
+	width: 20%;
+	font: 15px robotocondensed-regular;
+	color: white;
+	text-decoration: none;
+}
+#menu table tr td:hover {
+	cursor: pointer;
+	background: grey;
+	font: 15px robotocondensed-regular;
+}
+#texthome {
+	width: 100%;
+	background-image: url(../Imgs/background1.jpg);
+	background-repeat: no-repeat;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	background-position: center;
+	background-size: cover;
+}
+/*PAGE REGISTER*/
+
+#form {
+	padding-top: 10%;
+	width: 90%;
+	padding-left: 5%;
+}
+#register {
+	height: 40%;
+}
+#register label {
+	display: inline-block;
+	width: 175px;
+	height: 19px;
+	text-align: left;
+	margin: 3px 0;
+}
+#register input[type=text] {
+	width: 175px;
+}
+
+ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ margin: 0;
+}
+#form div {
+	display: block;
+	position: fixed;
+	top: 250px;
+	left: calc(100% + 50px);
+	height: 300px;
+	width: 400px;
+	background: rgb(255, 255, 255, 0.9);
+	padding: 5px 10px;
+	border-radius: 11px 0px;
+	box-shadow: 0px 0px 5px 2px #ccc;
+	transition: all 0.55s;
+}
+#form .title {
+	font: 21px robotocondensed-regular;
+	color: #555;
+}
+#form #pessoa-fisica, #form #pessoa-juridica {
+	position: absolute;
+	display: inline-block;
+	font-size: 16px;
+	font-family: adobeclean-regular;
+	color: #777;
+	width: 40%;
+	cursor: pointer;
+	transition: 0.65s;
+}
+#form #pessoa-fisica:hover, #form #pessoa-juridica:hover {
+	color: #333;
+}
+#form #pessoa-fisica {
+	left: 10%;
+	text-align: left;
+	border-bottom: 1px solid rgb(39,174,96);
+}
+#form #pessoa-juridica {
+	right: 10%;
+	text-align: right;
+	border-bottom: 1px solid rgb(194,54,22);
+}
+#form #first-form-div input {
+	display: block;
+	height: 27px;
+	width: 70%;
+	color: #333;
+	font: 17px roboto-regular;
+	background: #ccc;
+	margin: 0 auto;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #555;
+}
+#form .next-page, #form .previous-page {
+	position: absolute;
+	display: block;
+	width: 20%;
+	color: #eee;
+	background: #333;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 4px 0px;
+	font: 14px robotocondensed-regular;
+	cursor: pointer;
+}
+#form .next-page {
+	bottom: 10px;
+	right: 20px;
+}
+#form .previous-page {
+	bottom: 10px;
+	left: 20px;
+}
+
+#form .box-text{
+	display: block;
+	height: 27px;
+	width: 70%;
+	color: #333;
+	font: 17px roboto-regular;
+	background: transparent;
+	margin: 0 auto;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #555;
+}
+
+#form select option{
+	color: rgba(0,0,0,0.8);
+	
+	
+}
+
+#form input[type='reset']{
+	position: absolute;
+	display: block;
+	width: 20%;
+	color: #eee;
+	background: #333;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 4px 0px;
+	font: 14px robotocondensed-regular;
+	cursor: pointer;
+	bottom: 10px;
+	right: 113px;
+}
+
+#form input[type='submit']{
+	position: absolute;
+	display: block;
+	width: 20%;
+	color: #eee;
+	background: #333;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 4px 0px;
+	font: 14px robotocondensed-regular;
+	cursor: pointer;
+	bottom: 10px;
+	right: 20px;
+}
+
+
+/*PAGE BUSCAR*/
+
+#busca-div{
+	padding: 1% 1% 1% 1%;
+	margin: 12% 0 0 37%;
+	width: 25%;
+	display: block;
+	position: fixed;
+	background: rgb(255, 255, 255, 0.5);
+	border-radius: 11px 0px;
+	box-shadow: 0px 0px 5px 2px #ccc;
+	
+}
+
+#busca-div input[type="text"]{
+	display: block;
+    margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 96%;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#busca-div input[type="submit"] {
+	border: none;
+	border-bottom: 1px solid #000000;
+	background-color: transparent;
+	padding: 10px;
+	width: 100%;
+	color: black;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+#busca-div legend{
+	margin: auto;
+}
+
+/*PAGE PRINT BUSCAR*/
+
+#resultado-busca{
+	width: 93%;
+	margin: 6% 0% 0% 3%;
+	padding: 5% 0 10% 0%;
+	display: block;
+	position: fixed;
+	background: rgb(255, 255, 255, 0.6);
+	border-radius: 11px 11px;
+	box-shadow: 0px 0px 5px 2px #ccc;
+	font: 15px	 adobeclean-regular;
+
+}
+
+
+
+#resultado-busca #submit-buscar{
+	border: none;
+	border-bottom: 1px solid #000000;
+	background-color: transparent;
+	padding: 10px;
+	width: 20%;
+	color: black;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+#resultado-busca input[type="submit"]{
+	border: none;
+	border-bottom: 1px solid #000000;
+	background-color: transparent;
+	padding: 10px;
+	width: 20%;
+	color: black;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+#resultado-busca input[type="text"] {
+    margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#resultado-busca input[type="password"] {
+    margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#resultado-busca input[type="number"] {
+    margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#resultado-busca input[type="email"] {
+    margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#resultado-busca #select-option{
+	margin: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    padding: 5px 10px;
+    width: 21%;
+    text-align: center;
+    text-indent: 45%;
+    color: #555;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+#resultado-busca label{
+	display: inline-block;
+    text-align: left;
+    width: 219px;
+    padding-right: 1%;
+    margin-left: -11%;
+
+}
+
+#resultado-busca #submit-atualizar{
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: transparent;
+    padding: 10px;
+    width: 28%;
+    color: black;
+    font-size: 10px;
+    cursor: pointer;
+    margin-right: 9%;
+}
+
+#form-atualizar{
+	margin: 0 0 0 11%;
+}
+
+#form-buscar{
+	margin: 0 0 0 1%;
+}
+
+#checked{
+	width: 80%;
+	margin: 10% 0 0 10%;
+}
+
+#busca-div p{
+	font-family: roboto-regular;
+	font-size: 17px;
+
+}
